@@ -1,0 +1,22 @@
+﻿<use master="Application" />
+<viewdata model="FubuDate.Endpoints.Message.MessageIndexViewModel" />
+<h2>Send message</h2>
+<p>Hi, please type your message:</p>
+<P>
+  <test if="Model.IsMessageSent">
+    <p>Message is sent</p>
+    <else/>
+    <p>Ready to send message.</p>
+  </test>
+</P>
+<p>
+  <form action="/Message" method="post">
+    <p>
+      To: <input type="text" name="To" value="" />
+      Message:<input type="text" name="Message" value="" />
+    </p>
+    <p>
+      <input type="submit" value="Submit" />
+    </p>
+  </form>
+</p>

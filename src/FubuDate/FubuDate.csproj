@@ -122,12 +122,16 @@
     <Compile Include="Configuration\Policies\EndpointUrlPolicy.cs" />
     <Compile Include="Configuration\WebRegistry.cs" />
     <Compile Include="Domain\IEntity.cs" />
+    <Compile Include="Domain\Message.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Endpoints\EndpointMarker.cs" />
     <Compile Include="Endpoints\Home\HomeIndexRequest.cs" />
     <Compile Include="Endpoints\Home\HomeIndexViewModel.cs" />
     <Compile Include="Endpoints\Home\IndexEndpoint.cs" />
     <Compile Include="Endpoints\Login\IndexEndpoint.cs" />
+    <Compile Include="Endpoints\Message\IndexEndpoint.cs" />
+    <Compile Include="Endpoints\Message\MessageIndexRequest.cs" />
+    <Compile Include="Endpoints\Message\MessageIndexViewModel.cs" />
     <Compile Include="Endpoints\Users\IndexEndpoint.cs" />
     <Compile Include="Endpoints\User\SignupEndpoint.cs" />
     <Compile Include="Extensions\FubuExtensions.cs" />
@@ -155,6 +159,7 @@
     <None Include="Endpoints\Home\Index.spark" />
     <Content Include="fubu-content\fubumvc-diagnostics.zip" />
     <None Include="Endpoints\Login\Index.spark" />
+    <None Include="Endpoints\Message\Index.spark" />
     <None Include="Endpoints\Users\Index.spark" />
     <None Include="Endpoints\User\Signup.spark" />
     <None Include="Shared\Application.spark">
