@@ -29,8 +29,11 @@ namespace FubuDate.Configuration
 
             this.UseSpark();
             this.ApplyEndpointConventions();
+            
             //Import<AssetsConfiguration>();
             ApplyConvention<RavenSessionConvention>();
+            ApplyConvention<AuthenticationConvention>();
+
             this.Validation(validation =>
             {
                 validation

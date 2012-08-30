@@ -70,6 +70,15 @@ namespace FubuDate.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        internal static string LogoutIndexRequest {
+            get {
+                return ResourceManager.GetString("LogoutIndexRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Signup.
         /// </summary>
         internal static string SignupRequest {

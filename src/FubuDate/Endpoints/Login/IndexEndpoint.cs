@@ -1,17 +1,21 @@
-﻿using FubuDate.Endpoints.Users;
+﻿using System.Linq;
+using FubuDate.Endpoints.Users;
 using FubuLocalization;
 using FubuMVC.Core.Continuations;
 using FubuMVC.Core.Security;
+using Raven.Client;
 
 namespace FubuDate.Endpoints.Login
 {
     public class IndexEndpoint
     {
         private readonly IAuthenticationContext _authenticationContext;
+        readonly IDocumentSession _session;
 
-        public IndexEndpoint(IAuthenticationContext authenticationContext)
+        public IndexEndpoint(IAuthenticationContext authenticationContext, IDocumentSession session)
         {
             _authenticationContext = authenticationContext;
+            _session = session;
         }
 
         public LoginIndexViewModel Get(LoginIndexRequest request)
@@ -21,7 +25,8 @@ namespace FubuDate.Endpoints.Login
 
         public FubuContinuation Post(LoginInput input)
         {
-            if (input.Username == "username" && input.Password == "password")
+            var user = _session.Query<Domain.User>().Single(x => x.Username == input.Username);
+            if(user != null && user.Password == input.Password)
             {
                 _authenticationContext.ThisUserHasBeenAuthenticated(input.Username, false);
                 return FubuContinuation.RedirectTo(new UsersRequest());

@@ -116,7 +116,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\AuthenticationRequiredBehavior.cs" />
     <Compile Include="Behaviors\RavenSessionBehavior.cs" />
+    <Compile Include="Configuration\Conventions\AuthenticationConvention.cs" />
     <Compile Include="Configuration\Conventions\RavenSessionConvention.cs" />
     <Compile Include="Configuration\HandlerModelDescription.cs" />
     <Compile Include="Configuration\Policies\EndpointUrlPolicy.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Domain\IEntity.cs" />
     <Compile Include="Domain\Message.cs" />
     <Compile Include="Domain\User.cs" />
+    <Compile Include="Endpoints\Logout\IndexEndpoint.cs" />
     <Compile Include="Endpoints\EndpointMarker.cs" />
     <Compile Include="Endpoints\Home\HomeIndexRequest.cs" />
     <Compile Include="Endpoints\Home\HomeIndexViewModel.cs" />
