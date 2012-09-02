@@ -20,7 +20,7 @@ namespace FubuDate.Endpoints.Login
 
         public LoginIndexViewModel Get(LoginIndexRequest request)
         {
-            return new LoginIndexViewModel(request.Username, request.Password);
+            return new LoginIndexViewModel(request.Username, request.Password); 
         }
 
         public FubuContinuation Post(LoginInput input)

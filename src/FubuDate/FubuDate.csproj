@@ -118,6 +118,7 @@
   <ItemGroup>
     <Compile Include="Behaviors\AuthenticationRequiredBehavior.cs" />
     <Compile Include="Behaviors\RavenSessionBehavior.cs" />
+    <Compile Include="Binders\CurrentUserBinder.cs" />
     <Compile Include="Configuration\Conventions\AuthenticationConvention.cs" />
     <Compile Include="Configuration\Conventions\RavenSessionConvention.cs" />
     <Compile Include="Configuration\HandlerModelDescription.cs" />

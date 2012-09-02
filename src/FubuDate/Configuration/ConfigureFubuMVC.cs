@@ -1,3 +1,4 @@
+using FubuDate.Binders;
 using FubuDate.Configuration.Conventions;
 using FubuDate.Endpoints.Home;
 using FubuDate.Localization;
@@ -29,7 +30,7 @@ namespace FubuDate.Configuration
 
             this.UseSpark();
             this.ApplyEndpointConventions();
-            
+            Models.BindPropertiesWith<CurrentUserBinder>();
             //Import<AssetsConfiguration>();
             ApplyConvention<RavenSessionConvention>();
             ApplyConvention<AuthenticationConvention>();

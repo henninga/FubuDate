@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using FubuMVC.Core.Security;
+using FubuMVC.Core.Web.Security;
 using Raven.Client;
 
 
@@ -8,10 +10,12 @@ namespace FubuDate.Endpoints.Users
     public class IndexEndpoint
     {
         readonly IDocumentSession _session;
+        readonly ISecurityContext _securityContext;
 
         public IndexEndpoint(IDocumentSession session)
         {
             _session = session;
+            
         }
 
         public UsersViewModel Get(UsersRequest request)
@@ -25,7 +29,10 @@ namespace FubuDate.Endpoints.Users
         }
     }
 
-    public class UsersRequest { }
+    public class UsersRequest
+    {
+        public Domain.User CurrentUser { get; set; }
+    }
 
     public class UsersViewModel 
     {
